@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheen Tapak Dum Dum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Baloo 2', cursive;
+            background: linear-gradient(135deg, #ffcfdf, #b0f3f1);
+            color: #333;
+        }
+
+        header {
+            background: #ff6f61;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #ff6f61;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-group button:hover {
+            background: #e65b50;
+        }
+
+        .fun-activity {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .fun-activity button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background: #ff9a76;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .fun-activity button:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheen Tapak Dum Dum</h1>
+        <p>Join the fun-filled world of creativity and cheer!</p>
+    </header>
+
+    <div class="container">
+        <div class="card" id="signin-card">
+            <h2>Sign In</h2>
+            <form id="signin-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign In</button>
+                </div>
+            </form>
+            <p>New here? <a href="#" onclick="showSignUp()">Create an account</a>.</p>
+        </div>
+
+        <div class="card" id="signup-card" style="display: none;">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+            <p>Already have an account? <a href="#" onclick="showSignIn()">Sign in here</a>.</p>
+        </div>
+
+        <div class="fun-activity">
+            <h2>Feeling Lucky?</h2>
+            <p>Click the button below for a surprise cheer!</p>
+            <button onclick="showFunMessage()">Chhapaakkk!</button>
+            <p id="fun-message" style="margin-top: 10px; font-size: 1.2rem;"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cheen Tapak Dum Dum. Let the fun begin!</p>
+    </footer>
+
+    <script>
+        function showSignUp() {
+            document.getElementById('signin-card').style.display = 'none';
+            document.getElementById('signup-card').style.display = 'block';
+        }
+
+        function showSignIn() {
+            document.getElementById('signup-card').style.display = 'none';
+            document.getElementById('signin-card').style.display = 'block';
+        }
+
+        function showFunMessage() {
+            const messages = [
+                "You're amazing! 🎉",
+                "Just chill chill, Just chill! 🌟",
+                "Life is short, Smile, while you still have teeth!😊",
+                "Dance like nobody's watching! 💃",
+                "enjoy,kyunki kya pata kal ho naa ho! 🌈"
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('fun-message').textContent = randomMessage;
+        }
+    </script>
+</body>
+</html>
